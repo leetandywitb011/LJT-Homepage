@@ -3,10 +3,6 @@ name: Enable Pages
 on:
   workflow_dispatch:
 
-permissions:
-  administration: write
-  pages: write
-
 jobs:
   enable:
     runs-on: ubuntu-latest
@@ -15,4 +11,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api -X POST /repos/leetandywitb011/LJT-Homepage/pages -F build_type=workflow || gh api -X PUT /repos/leetandywitb011/LJT-Homepage/pages -F "source[branch]=master" -F "source[path]=/"
+          gh api -X POST /repos/leetandywitb011/LJT-Homepage/pages -F build_type=workflow
